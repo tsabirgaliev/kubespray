@@ -106,6 +106,7 @@
   package:
     name: "{{ docker_package_info.pkgs }}"
     state: "{{ docker_package_info.state | default('present') }}"
+    enablerepo: "{{ docker_package_info.enablerepo | default(omit) }}"
   module_defaults:
     apt:
       update_cache: true
